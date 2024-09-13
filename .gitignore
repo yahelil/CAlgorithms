@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+
+# IDE FIles
+*.cbp
+*.depend
+*.layout
+
