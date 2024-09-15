@@ -1,0 +1,5 @@
+mmn11Q1: main.o
+	gcc -g -ansi -pedantic -Wall main.c -o main
+
+main.o: main.c
+	gcc -c main.c -o main.o
