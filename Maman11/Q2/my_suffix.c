@@ -4,11 +4,12 @@
 #include <string.h>
 
 int suffix(char str[], char c){
-    char ending[127] = "";
+    char ending[126] = "";
     bool read = false;
     int added_char = 0;
     int len = strlen(str);
-    for (int i = 0; i < len; i++){
+    int i = 0;
+    while (str[i]){
         if (read){
             strncat(ending, &str[i], 1);
             added_char += 1;
@@ -19,6 +20,7 @@ int suffix(char str[], char c){
             strcpy(ending, "");  // Reset ending
             added_char = 0;
         }
+        i++;
     }
     return added_char;
 
@@ -26,13 +28,13 @@ int suffix(char str[], char c){
 int main()
 {
     char c;
-    char str[127];
+    char str[126];
     int num;
     printf("Enter a char: ");
     scanf(" %c", &c);
     printf("Enter a string: ");
     scanf("%s", &str);
-
+    printf("The character is %c and the string is %s", c, str);
     num = suffix(str, c);
     printf("Number of characters in the suffix: %d\n", num);
     return 0;
