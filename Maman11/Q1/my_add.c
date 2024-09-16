@@ -1,25 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#define DATA_SIZE 33
 
-int main() {
-    int num1, num2, binary1, binary2;
-    printf("Enter a number: ");
-    scanf("%d", &num1); // Reads an integer from the user
-
-    printf("Enter a second number: ");
-    scanf("%d", &num2); // Reads an integer from the user
-
-    printf("\nYou entered : %d and %d\n\n", num1, num2);
-
-    binary1 = decimalToBinary(num1);
-    binary2 = decimalToBinary(num2);
-    printf("\nThe sum of %d and %d is: %d or %d in decimal\n", num1, num2, addBinary(binary1, binary2), num1+num2);
-    return 0;
-}
-
-int decimalToBinary(int num){
+unsigned int decimalToBinary(int num){
     int result = num;
-    char binary[33];
+    char binary[DATA_SIZE];
     int index = 0;
 
     while (result > 0) {
@@ -44,7 +29,7 @@ int decimalToBinary(int num){
     printf("Binary representation: %s\n", binary);
     return atoi(binary);
 }
-int addBinary(int a, int b) {
+unsigned int my_add(unsigned int a, unsigned int b) {
     int carry = 0;
     int result = 0;
     int index = 0;
@@ -68,3 +53,18 @@ int addBinary(int a, int b) {
     return result;
 }
 
+int main() {
+    int num1, num2, binary1, binary2;
+    printf("Enter a number: ");
+    scanf("%d", &num1); // Reads an integer from the user
+
+    printf("Enter a second number: ");
+    scanf("%d", &num2); // Reads an integer from the user
+
+    printf("\nYou entered : %d and %d\n\n", num1, num2);
+
+    binary1 = decimalToBinary(num1);
+    binary2 = decimalToBinary(num2);
+    printf("\nThe sum of %d and %d is: %d or %d in decimal\n", num1, num2, addBinary(binary1, binary2), num1 + num2);
+    return 0;
+}
