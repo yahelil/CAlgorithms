@@ -57,7 +57,8 @@ unsigned int my_add(unsigned int a, unsigned int b) {
 }
 
 int main() {
-    int num1, num2, binary1, binary2;
+    int num1, num2
+    char* binary1, *binary2;
     printf("Enter a number: ");
     scanf("%d", &num1); // Reads an integer from the user
 
@@ -68,6 +69,6 @@ int main() {
 
     binary1 = decimalToBinary(num1);
     binary2 = decimalToBinary(num2);
-    printf("\nThe sum of %d and %d is: %d or %d in decimal\n", num1, num2, addBinary(binary1, binary2), num1 + num2);
+    printf("\nThe sum of %d and %d is: %d or %d in decimal\n", num1, num2, addBinary(num1, num2), num1 + num2);
     return 0;
 }
