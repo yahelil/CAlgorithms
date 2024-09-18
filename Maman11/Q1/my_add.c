@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define DATA_SIZE 33
+#define BYTE_SIZE 33
 
-unsigned int decimalToBinary(int num){
+char* decimalToBinary(int num){
     int result = num;
-    char binary[DATA_SIZE];
+    char binary[BYTE_SIZE];
     int index = 0;
 
     while (result > 0) {
@@ -26,8 +26,11 @@ unsigned int decimalToBinary(int num){
         end--;
     }
 
+    
+    return binary;
+}
+void print_binary(char* binary){
     printf("Binary representation: %s\n", binary);
-    return atoi(binary);
 }
 unsigned int my_add(unsigned int a, unsigned int b) {
     int carry = 0;
