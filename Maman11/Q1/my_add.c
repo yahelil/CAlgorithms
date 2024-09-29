@@ -3,15 +3,29 @@
 #define BYTE_SIZE 8
 
 void print_binary(int num) {
+    /*
+    This function gets a decimal number and prints it's binary value
+
+    param num: The decimal number to be printed
+    @return:
+    prints the number in binary
+    */
     if (num > 1) {
-        print_binary(num / 2);  // Recursive call for higher bits
+        print_binary(num / 2);  /*Recursive call for higher bits*/ 
     }
     
-    // Print the least significant bit (LSB)
+    /*Print the least significant bit (LSB)*/ 
     printf("%d", num % 2);
 }
 
 unsigned int my_add(unsigned int a, unsigned int b) {
+    /*
+    This function gets two number and calculates their sum in a binary calculation
+
+    param a: The first number to be added
+    param b: The second number to be added
+    @return: (unsigned int) The binary value of the two numbers  
+    */
     unsigned int sum = 0, carry = 0, result = 0, bitA, bitB, i;
 
     for (i = 0; i < sizeof(unsigned int) * BYTE_SIZE;i++) {
@@ -34,20 +48,22 @@ unsigned int my_add(unsigned int a, unsigned int b) {
 int main() {
     unsigned int num1, num2, sum;
     char* binary1, *binary2;
+    //Asking the user for two number for the calculations and reciving it
     printf("Enter a number: ");
-    scanf("%d", &num1); // Reads an integer from the user
+    scanf("%u", &num1); 
 
     printf("Enter a second number: ");
-    scanf("%d", &num2); // Reads an integer from the user
+    scanf("%u", &num2); 
 
+    /*printing the input*/
     printf("\nYou entered : %d and %d\n\n", num1, num2);
 
     print_binary(num1);
     print_binary(num2);
     sum = my_add(num1, num2);
-    printf("\nThe sum of %d and %d is:\n%d in decimal\n", num1, num2, sum);
+    printf("\nThe sum of %u and %u is:\n%u in decimal\n", num1, num2, sum);
     print_binary(sum);
-    printf("in binary");
+    printf(" in binary");
     
     
     return 0;
