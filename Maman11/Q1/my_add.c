@@ -20,7 +20,6 @@ unsigned int my_add(unsigned int a, unsigned int b) {
 
         /* Calculate the sum of bits and carry */
         sum = bitA ^ bitB  ^ carry;
-        printf("\nbitA: %d, bitB: %d, sum: %d", bitA, bitB, sum);
 
         /* Update the result with the sum at the current bit position */
         result |= (sum << i);
